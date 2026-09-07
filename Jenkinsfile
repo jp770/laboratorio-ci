@@ -13,5 +13,13 @@ pipeline {
                 sh 'mvn clean test package'
             }
         }
+
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar -Dsonar.projectKey=laboratorio-ci -Dsonar.projectName=laboratorio-ci'
+                }
+            }
+        }
     }
 }
