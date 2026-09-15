@@ -1,9 +1,13 @@
 package com.ejemplo;
 
+import java.util.logging.Logger;
+
 public class App {
 
+    private static final Logger LOGGER = Logger.getLogger(App.class.getName());
+
     public static void main(String[] args) {
-        System.out.println("Laboratorio Jenkins Maven SonarQube");
+        LOGGER.info("Laboratorio Jenkins Maven SonarQube");
     }
 
     public static String saludo(String nombre) {
